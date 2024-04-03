@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        input{
+            width: 500px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+<body>
+<form action="{{ url_for('predict') }}" method="post">
+    <input type="number" placeholder="Enter the opening value of the stock" name="open"> <br>
+    <input type="number" placeholder="Enter the closing value of the stock" name="close"> <br>
+
+    <input type="number" placeholder="Enter the Highest trading value of the stock" name="high"> <br>
+    <input type="number" placeholder="Enter the Lowest trading value of the stock" name="low" > <br>
+    <br>
+    <input type="submit" value="Get Prediction">
+
+</form>
+{% if prediction == 1 %}
+    <p>You should buy the stock</p>
+{% elif prediction == -1 %}
+    <p>You should sell the stock</p>
+{% endif %}
+
+</body>
+</html>
