@@ -30,7 +30,7 @@ def predict():
         return render_template('index.html', prediction=prediction)
 
     # Return the prediction
-    return render_template('index.html')
+    return render_template('index.html')    
 
 
 if __name__ == '__main__':
