@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Investment Compass</title>
     <link rel="stylesheet" href="{{url_for("static", filename = "styles/index.css")}}">
+    <link rel="stylesheet" href="../static/styles/index.css">
+    
 </head>
 
 <body>
@@ -23,8 +25,10 @@
             <input type="submit" value="Get Prediction">
         </form>
         {% if prediction == 1 %}
+        <img src="{{url_for('static', filename='images/Bullish.jpg')}}" alt="Bullish Stock">
         <h2>This is Bullish Stock!!</h2>
         {% elif prediction == -1 %}
+        <img src="{{url_for('static', filename='images/Bearish.jpg')}}" alt="Bearish Stock">
         <h2>Stock is Bearish</h2>
         {% endif %}
     </div>
